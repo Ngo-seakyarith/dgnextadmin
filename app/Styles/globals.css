@@ -1,0 +1,603 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+/* Define root font family variables */
+:root {
+  --background: #F1F5F9;
+  --foreground: #171717;
+  --font-default: 'Acme', sans-serif;
+  --font-crimson: 'Crimson Pro', serif;
+  --font-carter: 'Carter One', cursive;
+  --font-athiti: 'Athiti', sans-serif;
+  --font-livvic: 'Livvic', sans-serif;
+  --font-darker: 'Darker Grotesque', sans-serif;
+  --font-gupter: 'Gupter', serif;
+  --font-glegoo: 'Glegoo', serif;
+  --font-yrsa: 'Yrsa', serif;
+}
+
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-default);
+  font-weight: 400; /* Default weight */
+}
+
+/* Example usage of fonts */
+h1 {
+  font-family: var(--font-default);
+  font-weight: 600;
+}
+
+h2 {
+  font-family: var(--font-carter);
+  font-weight: 400;
+}
+
+h3 {
+  font-family: var(--font-athiti);
+  font-weight: 300;
+}
+
+h5 {
+  font-family: var(--font-crimson);
+  font-weight: 400;
+}
+
+ul {
+  font-family: var(--font-glegoo);
+  font-weight: 200;
+}
+
+p {
+  font-family: var(--font-livvic);
+  font-weight: 200;
+}
+
+button {
+  font-family: var(--font-darker);
+  font-weight: 400;
+}
+
+a {
+  font-family: var(--font-crimson);
+  font-weight: 400;
+}
+
+/* Font weight usage for specific elements */
+h1, h2, h3 {
+  font-weight: 600; /* Bold headings */
+}
+
+h2 {
+  font-weight: 200; /* Light heading */
+}
+
+p {
+  font-weight: 100; /* Very light text */
+}
+
+/* Style for links */
+a {
+  font-family: var(--font-yrsa);
+  font-weight: 400; /* Default weight for links */
+}
+
+.navbar {
+  font-family: var(--font-gupter);
+  font-weight: 600;
+}
+
+.footer {
+  font-family: var(--font-glegoo);
+  font-weight: 400;
+}
+
+blockquote {
+  font-family: var(--font-yrsa);
+  font-weight: 100;
+}
+
+.search-input {
+  border-radius: 15px;
+  border: 2px solid #8d8d8d;
+  font-size: 14px;
+  font-family: 'Livvic', sans-serif;
+  font-weight: 400;
+  color: #2c3e50;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Change the placeholder color to gray */
+.search-input::placeholder {
+  color: #a0a0a0; /* Correct placeholder color */
+  opacity: 1;
+  font-size: 14px; /* Set the correct font size */
+}
+
+.search-input:focus,
+.search-input:hover {
+  border-color: #2c3e50; /* Change border color on hover/focus */
+}
+
+.search-btn {
+  border-radius: 10px;
+  background-color: #2c3e50;
+  color: white;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  font-family: 'Crimson Pro', serif;
+}
+
+.search-btn:hover {
+  border-color: #6ca3d6;
+  background-color: #6ca3d6; /* Darker shade on hover */
+  color: white; /* Ensures text remains white */
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-link {
+  position: relative;
+  color: #2c3e50;
+  font-size: 18px;
+  font-family: 'Crimson Pro', serif;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active-link {
+  font-weight: bold;
+  color: #f47834 !important;
+  border-bottom: 3px solid #f47834 !important;
+  padding-bottom: 8px !important;
+}
+
+/* Hover effect with border-bottom */
+.navbar-nav .nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #F47834; /* Customize hover color */
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+}
+
+/* Expand border-bottom on hover */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #F47834; /* Customize text hover color */
+}
+
+/* Add to your global CSS file or <style jsx> */
+.position-fixed {
+  top: 0;
+  left: 0;
+  z-index: 1030; /* Ensures the header is above other elements */
+}
+
+main {
+  padding-top: 0px; /* Ensure content starts below the fixed header */
+}
+
+.product-card {
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  background-color: rgb(44, 62, 80);
+  border-radius: 5px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-indicators {
+  bottom: -50px;
+}
+
+.carousel-indicators button {
+  background-color: #999;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #333;
+  height: 10px;
+}
+
+/* Make carousel mobile-responsive */
+@media (max-width: 768px) {
+  .carousel-item .row .col-md-3 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item .row .col-md-3 {
+    width: 100%;
+  }
+}
+
+.theme-switch-wrapper div {
+  font-size: 1.5rem; /* Change icon size */
+  color: #2c3e50; /* Icon color */
+  transition: color 0.3s ease;
+}
+
+.theme-switch-wrapper div:hover {
+  color: #f47834; /* Icon color change on hover */
+}
+
+[data-theme="light"] {
+  background-color: #fff;
+  color: #000;
+}
+
+[data-theme="dark"] {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.custom-pagination {
+  /* Optional: Customize the pagination container if needed */
+}
+
+.custom-page-link {
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #f8f9fa; /* Default background */
+  color: #212529; /* Default text color */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.custom-page-link:hover:not(.disabled .custom-page-link) {
+  background-color: #ffc548; /* Blue background on hover */
+  border-color: #ffc548;
+  color: #fff; /* White text on hover */
+  transform: translateY(-3px); /* Slight upward movement */
+}
+
+/* Active state */
+.active .custom-page-link {
+  background-color: #f3894b; /* Green background for active */
+  color: #fff; /* White text for active */
+  transform: scale(1.1); /* Scale up slightly */
+  border-color: #f3894b;
+}
+
+/* Disabled state */
+.disabled .custom-page-link {
+  background-color: #e9ecef; /* Grayed-out background */
+  color: #6c757d; /* Grayed-out text */
+  cursor: not-allowed;
+  transform: none; /* No animation */
+}
+
+.custom-tab-link {
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+  color: #2c3e50; /* Default color (Bootstrap gray) */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover state */
+.custom-tab-link:hover {
+  color: #ffc548; /* Orange on hover */
+}
+
+/* Active state */
+.custom-tab-link.active {
+  color: #f3894b; /* Orange for active */
+}
+
+.custom-input:focus {
+  border-color: #F47832 !important;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.75) !important;
+  outline: none;
+}
+
+.custom-input {
+  border: 1px solid #ccc; /* Default border */
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-input::placeholder {
+  opacity: 0.7; /* Ensure placeholder remains inside */
+}
+
+.custom-input:focus::placeholder {
+  color: transparent; /* Hide placeholder on focus */
+}
+
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-7px); /* Slight lift on hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.055); /* Add shadow on hover */
+}
+
+.service-bg {
+  background-color: #fff; /* Light background */
+  min-height: 90vh; /* Full height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Service Card Styles */
+.service-card {
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Padding inside */
+  background: white; /* White background */
+  transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+  border: 4px solid #f3894b;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.062); /* Shadow appears on hover */
+}
+
+.form-control::placeholder {
+  color: gray; /* Change to your preferred color */
+  opacity: 1; /* Ensures the color is fully visible */
+}
+
+.custom-nav-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.custom-nav-tabs .nav-item {
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin: 10px;
+}
+
+.custom-nav-tabs .nav-link {
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  display: block;
+}
+
+.custom-nav-tabs .nav-link.active {
+  background-color: #2c3e50;
+  color: white;
+  border-color: #2c3e50;
+}
+
+.custom-nav-tabs .nav-link:hover:not(.active) {
+  background-color: #819ab3;
+  color: white;
+  border-color: #819ab3;
+}
+
+.custom-nav-tabs .nav-link.text-center {
+  text-align: center !important; /* Force centering if needed */
+}
+
+@media (max-width: 576px) {
+  .custom-nav-tabs .nav-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.card {
+  border: none;
+}
+
+.form-control {
+  border-radius: 15px;
+  height: 20px;
+  font-size: 14px;
+}
+
+.form-control.custom-input {
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.form-floating label {
+  color: #6c757d;
+}
+
+.btn-primary {
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+  border-radius: 12px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1c2b3a;
+  border-color: #1c2b3a;
+}
+
+footer {
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.modal h2 {
+  font-size: 18px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.modal h2.success {
+  color: #2ecc71;
+}
+
+.modal h2.error {
+  color: #e74c3c;
+}
+
+.modal h2.loading {
+  color: #34495e;
+}
+
+.form-floating .btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.form-floating .btn:hover {
+  background: rgba(44, 62, 80, 0.8);
+}
+
+.custom-table th {
+  background-color: #f3894b;
+  color: #fff;
+}
+
+
+/* Base style for tab buttons */
+.custom-tab-buttons {
+    background-color: #f5f5f5; /* Default background */
+    color: #2c3e50; /* Default text color */
+    border: none; /* Remove default border if needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    transition: all 0.3s ease; /* Smooth transition for hover/active */
+    font-family: 'Acme', sans-serif;
+}
+
+/* Hover state */
+.custom-tab-buttons:hover {
+    background-color: #f47832; /* Lighter gray on hover */
+    color: #fff; /* Orange text on hover */
+    font-family: 'Acme', sans-serif;
+}
+
+/* Active state */
+.nav-link.custom-tab-button.active {
+  background-color: #f47832 !important;
+  color: #ffffff !important;
+}
+
+/* Optional: Focus state to remove outline if needed */
+.custom-tab-buttons:focus {
+  background-color: #f47832;
+  color: #fff;
+    outline: none;
+}
+
+
+/* Ensure your CSS is loaded AFTER Bootstrap */
+.nav-tabs .nav-item .custom-tab-button {
+  background-color: #f5f5f5;
+  color: #2c3e50;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Acme', sans-serif;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.nav-tabs .nav-item .custom-tab-button:hover {
+  background-color: #e0e0e0;
+  color: #2c3e50;
+  font-family: 'Acme', sans-serif;
+}
+
+.nav-tabs .nav-item .custom-tab-button.active {
+  background-color: #f47832 !important; /* Force override */
+  color: #ffffff !important;
+  font-size: 18px;
+  border: none; /* Remove any Bootstrap border if present */
+}
+
+.nav-pills .nav-link.active {
+  background-color: #2c3e50 !important;
+  color: #fff !important;
+  border-radius: 10px;
+}
+
+
+.error-page {
+  background: linear-gradient(135deg, var(--background) 0%, var(--accent) 100%);
+}
+
+.error-heading {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  font-size: 2rem;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.error-subtitle {
+  color: var(--muted-foreground);
+  font-size: 1.2rem;
+}
+
+.search-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.btn-search {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .error-heading {
+    font-size: 6rem;
+  }
+  
+  .error-message {
+    font-size: 1.5rem;
+  }
+  
+  .error-subtitle {
+    font-size: 1rem;
+  }
+  
+  .action-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
