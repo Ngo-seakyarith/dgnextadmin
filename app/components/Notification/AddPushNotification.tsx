@@ -1,7 +1,7 @@
 // src/components/PushNotification.tsx
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { collection, doc, setDoc, getDocs, query, Timestamp, serverTimestamp } from 'firebase/firestore';
+import { collection, doc, setDoc, getDocs, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '@/app/lib/config/firebase';
 import { Card, CardContent } from '@/app/components/ui/card';
@@ -170,9 +170,9 @@ const PushNotification = () => {
       setNotifName('');
       setModalType('success');
       setModalMessage(sendNow ? 'Notification sent!' : 'Draft saved');
-    } catch (err: any) {
+    } catch (err: unknown) {
       setModalType('error');
-      setModalMessage(err.message);
+      setModalMessage(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setModalOpen(true);
       setLoading(false);
